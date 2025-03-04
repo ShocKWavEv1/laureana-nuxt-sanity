@@ -1,0 +1,17 @@
+{
+  "name": "my-nuxt-app",
+  "private": true,
+  "workspaces": [
+    "nuxt-app",
+    "studio"
+  ],
+  "scripts": {
+    "dev": "concurrently \"npm run dev --workspace=nuxt-app\" \"npm run dev --workspace=studio\"",
+    "build": "npm run build --workspace=nuxt-app && npm run build --workspace=studio",
+    "start": "npm run start -w nuxt-app"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "concurrently": "^9.1.2"
+  }
+}
