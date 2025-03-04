@@ -6,7 +6,6 @@ import {schemaTypes} from './schemaTypes'
 export default defineConfig({
   name: 'default',
   title: 'laureana',
-  basePath: '/studio',
 
   projectId: 'usj7qi8b',
   dataset: 'production',

@@ -10,7 +10,7 @@ useHead({
 </script>
 
 <template>
-  <div class="bg-zinc-950 text-white h-[100vh]">
+  <div class="bg-zinc-950 text-white h-[100vh] p-[20px]">
     Welcome to Nuxt + Sanity CMS
     <ul>
       <li><NuxtLink to="/posts">Posts</NuxtLink></li>
