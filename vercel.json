@@ -2,7 +2,7 @@
   "rewrites": [
     {
       "source": "/studio/(.*)",
-      "destination": "https://laurenea.sanity.studio"
+      "destination": "https://laurenea.sanity.studio/studio/structure"
     }
   ]
 }
