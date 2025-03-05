@@ -16,5 +16,5 @@ useHead({
     <li><NuxtLink to="/posts/90">Posts details 90</NuxtLink></li>
     <li><NuxtLink to="/posts/34">Posts details 34</NuxtLink></li>
   </ul>
-  <NuxtLink to="/">Home</NuxtLink>
+  <NuxtLink to="/" prefetch>Home</NuxtLink>
 </template>

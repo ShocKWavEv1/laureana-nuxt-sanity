@@ -9,7 +9,7 @@ useHead({
 
 import { type Post } from "~/types/post";
 
-const query = groq`*[ _type == "post"] | order(_createdAt desc)`;
+const query = groq`*[ _type == "post" && defined(slug.current) ] | order(_createdAt desc)`;
 const { data: posts } = await useSanityQuery<Post[]>(query);
 </script>
 
