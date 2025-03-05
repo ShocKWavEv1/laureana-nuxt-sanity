@@ -8,7 +8,6 @@ export const useLenisSmoothScroll = () => {
       orientation: "vertical",
       gestureOrientation: "vertical",
       smoothWheel: true,
-      touchMultiplier: 2,
     });
 
     // Request animation frame for smooth scrolling
