@@ -7,10 +7,6 @@ export const useLenisSmoothScroll = () => {
     orientation: "vertical",
     gestureOrientation: "vertical",
     smoothWheel: true,
-    syncTouch: true, // Enable smooth scrolling on touch devices
-    syncTouchLerp: 0.095, // Smooth scrolling sensitivity
-    touchInertiaMultiplier: 45,
-    touchMultiplier: 1,
   });
 
   // Request animation frame for smooth scrolling

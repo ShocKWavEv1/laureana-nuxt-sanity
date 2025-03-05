@@ -2,26 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
-html {
+html,
+body {
   overflow: hidden;
-  background-color: black;
-}
-
-html.lenis {
-  height: auto;
-
-  &.lenis-smooth {
-    scroll-behavior: auto;
-  }
-  &.lenis-smooth [data-lenis-prevent] {
-    overscroll-behavior: contain;
-  }
-  &.lenis-stopped {
-    overflow: hidden;
-  }
-  &.lenis-scrolling iframe {
-    pointer-events: none;
-  }
+  background-color: #bc162a;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
 }
 
 .lenis.lenis-smooth {
