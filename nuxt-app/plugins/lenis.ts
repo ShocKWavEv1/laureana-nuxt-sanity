@@ -1,4 +1,5 @@
 import { defineNuxtPlugin } from "#app";
+import { onUnmounted } from "vue";
 import Lenis from "@studio-freight/lenis";
 
 export default defineNuxtPlugin((nuxtApp) => {
@@ -9,21 +10,25 @@ export default defineNuxtPlugin((nuxtApp) => {
       orientation: "vertical",
       gestureOrientation: "vertical",
       smoothWheel: true,
-      syncTouch: true, // Enable smooth scrolling on touch devices
-      syncTouchLerp: 1, // Smooth scrolling sensitivity
+      syncTouch: true,
+      syncTouchLerp: 1,
       touchInertiaMultiplier: 35,
       touchMultiplier: 2,
     });
 
-    // Request animation frame for smooth scrolling
+    // Animation loop
     function raf(time: number) {
       lenis.raf(time);
       requestAnimationFrame(raf);
     }
-
     requestAnimationFrame(raf);
 
-    // Inject Lenis into the Nuxt app context
+    // Provide Lenis globally in Nuxt
     nuxtApp.provide("lenis", lenis);
+
+    // Cleanup on unmount using Vue's `onUnmounted`
+    onUnmounted(() => {
+      lenis.destroy();
+    });
   }
 });
