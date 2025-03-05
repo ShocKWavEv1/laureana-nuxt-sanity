@@ -4,7 +4,6 @@
 
 html,
 body {
-  overflow: hidden;
   background-color: #bc162a;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;

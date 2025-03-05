@@ -4,11 +4,12 @@ import Lenis from "@studio-freight/lenis";
 export default defineNuxtPlugin((nuxtApp) => {
   if (import.meta.client) {
     const lenis = new Lenis({
-      duration: 1.45,
+      duration: 2.25,
       easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
       orientation: "vertical",
       gestureOrientation: "vertical",
       smoothWheel: true,
+      syncTouch: true, // ✅ Enables touch sync with native scrolling
       touchMultiplier: 2,
     });
 
