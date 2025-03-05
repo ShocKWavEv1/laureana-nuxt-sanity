@@ -21,8 +21,8 @@ const { data: posts } = await useSanityQuery<Post[]>(query);
       <p>{{ post.slug.current }}</p>
     </div>
   </div>
-  <div class="bg-rose-300 h-[100vh]">Hola</div>
-  <div class="bg-rose-800 h-[100vh]">
+  <div class="bg-white text-zinc-950 h-[100vh]">Hola</div>
+  <div class="bg-black text-white h-[100vh]">
     <ul>
       <li><NuxtLink to="/posts">Posts</NuxtLink></li>
     </ul>
