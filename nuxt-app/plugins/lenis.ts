@@ -10,9 +10,6 @@ export default defineNuxtPlugin((nuxtApp) => {
       orientation: "vertical",
       gestureOrientation: "vertical",
       smoothWheel: true,
-      syncTouch: true,
-      syncTouchLerp: 1,
-      touchInertiaMultiplier: 35,
       touchMultiplier: 2,
     });
 
