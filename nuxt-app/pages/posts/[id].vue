@@ -15,6 +15,8 @@ useHead({
 </script>
 
 <template>
-  Hi Post Detail {{ route.params.id }}
-  <NuxtLink to="/posts">Posts</NuxtLink>
+  <div class="w-full h-[300vh] bg-teal-500">
+    Hi Post Detail {{ route.params.id }}
+    <NuxtLink to="/posts">Posts</NuxtLink>
+  </div>
 </template>
