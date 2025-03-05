@@ -1,4 +1,12 @@
 <script setup lang="ts">
+useHead({
+  title: "Laureana App",
+  meta: [{ name: "description", content: "My amazing site." }],
+  bodyAttrs: {
+    class: "test",
+  },
+});
+
 import { type Post } from "~/types/post";
 
 const query = groq`*[ _type == "post"] | order(_createdAt desc)`;
