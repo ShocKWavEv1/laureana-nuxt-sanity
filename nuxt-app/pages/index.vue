@@ -33,7 +33,9 @@ const { data: posts } = await useSanityQuery<Post[]>(query);
   </div>
   <div class="bg-white text-zinc-950 h-[100vh]">Hola</div>
   <div class="bg-black text-white h-[100vh]">
-    <div class="w-full grid grid-cols-3 p-[20px] gap-[20px]">
+    <div
+      class="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 p-[20px] gap-[20px]"
+    >
       <div
         v-for="post in posts"
         :key="post._id"
