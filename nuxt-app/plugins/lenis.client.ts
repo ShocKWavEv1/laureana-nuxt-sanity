@@ -9,8 +9,6 @@ export default defineNuxtPlugin((nuxtApp) => {
       orientation: "vertical",
       gestureOrientation: "vertical",
       smoothWheel: true,
-      syncTouch: true, // ✅ Enables touch sync with native scrolling
-      touchMultiplier: 2,
     });
 
     // Request animation frame for smooth scrolling
