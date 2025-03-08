@@ -1,19 +1,3 @@
-<script setup lang="ts">
-useHead({
-  title: "Laureana App",
-  meta: [{ name: "description", content: "My amazing site." }],
-  bodyAttrs: {
-    class: "test",
-  },
-});
-
-import { urlFor } from "~/lib/sanityImage";
-import { type Post } from "~/types/post";
-
-const query = groq`*[ _type == "post" && defined(slug.current) ] | order(_createdAt desc)`;
-const { data: posts } = await useSanityQuery<Post[]>(query);
-</script>
-
 <template>
   <div class="bg-zinc-950 text-white p-[40px]">
     <h1 class="text-6xl">Welcome to Nuxt + Sanity CMS</h1>
@@ -23,18 +7,23 @@ const { data: posts } = await useSanityQuery<Post[]>(query);
       <div
         v-for="post in posts"
         :key="post._id"
-        class="w-full rounded-md shadow-2xl bg-white"
+        class="w-full rounded-md shadow-2xl bg-white overflow-hidden"
       >
         <NuxtLink
           prefetch
           :to="`/posts/${post.slug.current}`"
           class="w-full flex flex-col gap-[20px] p-4"
         >
-          <img
-            v-if="post.mainImage"
-            :src="urlFor(post.mainImage).url()"
-            :alt="post.title"
-          />
+          <div class="relative w-full h-[300px]">
+            <!-- Blurred placeholder -->
+            <img
+              v-if="post.mainImage"
+              :src="urlForPlaceholder(post.mainImage).url()"
+              class="absolute inset-0 w-full h-full object-cover"
+              :alt="post.title"
+            />
+          </div>
+
           <div class="w-full flex flex-col">
             <h1 class="text-zinc-950 text-2xl">{{ post.title }}</h1>
             <p class="text-zinc-950 text-lg">{{ post.slug.current }}</p>
@@ -43,5 +32,26 @@ const { data: posts } = await useSanityQuery<Post[]>(query);
       </div>
     </div>
   </div>
-  <div class="bg-white text-zinc-950 h-[100vh]">Hola</div>
 </template>
+
+<script setup lang="ts">
+useHead({
+  title: "Laureana App",
+  meta: [{ name: "description", content: "My amazing site." }],
+  bodyAttrs: {
+    class: "test",
+  },
+});
+
+import { type Post } from "~/types/post";
+import { urlFor, urlForPlaceholder } from "~/utils/sanityImage";
+
+const query = groq`*[ _type == "post" && defined(slug.current) ] | order(_createdAt desc)`;
+const { data: posts } = await useSanityQuery<Post[]>(query);
+
+const loadedImages = ref<Record<string, boolean>>({});
+
+const handleImageLoad = (id: string) => {
+  loadedImages.value[id] = true;
+};
+</script>

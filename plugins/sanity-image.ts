@@ -9,7 +9,11 @@ export default defineNuxtPlugin(() => {
     return builder.image(source);
   }
 
+  function urlForPlaceholder(source: Image) {
+    return builder.image(source).width(50).quality(5).blur(20);
+  }
+
   return {
-    provide: { urlFor },
+    provide: { urlFor, urlForPlaceholder },
   };
 });

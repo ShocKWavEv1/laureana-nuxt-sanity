@@ -20,12 +20,18 @@ export default defineNuxtConfig({
   },
   compatibilityDate: "2024-11-01",
   devtools: { enabled: true },
-  modules: ["@nuxtjs/sanity"],
+  modules: ["@nuxtjs/sanity", "@nuxt/image"],
   sanity: {
     projectId: process.env.NUXT_SANITY_PROJECT_ID,
     dataset: process.env.NUXT_SANITY_DATASET,
     apiVersion: "2022-03-25",
     useCdn: true, // Set to false for fresh data
+  },
+  image: {
+    sanity: {
+      projectId: process.env.NUXT_PUBLIC_SANITY_PROJECT_ID,
+      dataset: process.env.NUXT_PUBLIC_SANITY_DATASET,
+    },
   },
   css: ["~/assets/css/main.css"],
   postcss: {
