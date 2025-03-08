@@ -709,7 +709,7 @@ const _inlineRuntimeConfig = {
     "sanity": {
       "additionalClients": {},
       "apiVersion": "2022-03-25",
-      "dataset": "production",
+      "dataset": "development",
       "disableSmartCdn": false,
       "perspective": "raw",
       "projectId": "usj7qi8b",
