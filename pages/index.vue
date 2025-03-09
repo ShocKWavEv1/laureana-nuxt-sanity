@@ -17,13 +17,10 @@
           <div class="relative w-full h-[260px]">
             <NuxtImg
               v-if="post.mainImage"
-              format="webp"
-              quality="100"
               loading="lazy"
               :src="urlFor(post.mainImage).url()"
               :alt="post.title"
               :placeholder="urlForPlaceholder(post.mainImage).url()"
-              preload
               class="absolute inset-0 w-full h-full object-cover"
             />
           </div>

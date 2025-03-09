@@ -6,11 +6,11 @@ export default defineNuxtPlugin(() => {
   const builder = imageUrlBuilder(sanity.client);
 
   function urlFor(source: Image) {
-    return builder.image(source);
+    return builder.image(source).format("webp");
   }
 
   function urlForPlaceholder(source: Image) {
-    return builder.image(source).width(300).quality(5).blur(250);
+    return builder.image(source).width(300).quality(5).blur(250).format("webp");
   }
 
   return {
