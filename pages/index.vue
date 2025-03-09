@@ -15,11 +15,12 @@
           class="w-full flex flex-col gap-[20px] p-4"
         >
           <div class="relative w-full h-[300px]">
-            <!-- Blurred placeholder -->
-            <img
+            <NuxtImg
               v-if="post.mainImage"
               :src="urlForPlaceholder(post.mainImage).url()"
-              class="absolute inset-0 w-full h-full object-cover"
+              class="absolute inset-0 w-full h-full object-cover transition-opacity duration-700 ease-in-out"
+              @load="console.log('Image loaded')"
+              loading="lazy"
               :alt="post.title"
             />
           </div>
@@ -44,14 +45,8 @@ useHead({
 });
 
 import { type Post } from "~/types/post";
-import { urlFor, urlForPlaceholder } from "~/utils/sanityImage";
+import { urlFor } from "~/utils/sanityImage";
 
 const query = groq`*[ _type == "post" && defined(slug.current) ] | order(_createdAt desc)`;
 const { data: posts } = await useSanityQuery<Post[]>(query);
-
-const loadedImages = ref<Record<string, boolean>>({});
-
-const handleImageLoad = (id: string) => {
-  loadedImages.value[id] = true;
-};
 </script>
