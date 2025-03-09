@@ -14,14 +14,17 @@
           :to="`/posts/${post.slug.current}`"
           class="w-full flex flex-col gap-[20px] p-4"
         >
-          <div class="relative w-full h-[300px]">
+          <div class="relative w-full h-[260px]">
             <NuxtImg
               v-if="post.mainImage"
-              :src="urlForPlaceholder(post.mainImage).url()"
-              class="absolute inset-0 w-full h-full object-cover transition-opacity duration-700 ease-in-out"
-              @load="console.log('Image loaded')"
+              format="webp"
+              quality="100"
               loading="lazy"
+              :src="urlFor(post.mainImage).url()"
               :alt="post.title"
+              :placeholder="urlForPlaceholder(post.mainImage).url()"
+              preload
+              class="absolute inset-0 w-full h-full object-cover"
             />
           </div>
 

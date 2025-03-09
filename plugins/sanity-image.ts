@@ -10,7 +10,7 @@ export default defineNuxtPlugin(() => {
   }
 
   function urlForPlaceholder(source: Image) {
-    return builder.image(source).width(50).quality(5).blur(20);
+    return builder.image(source).width(300).quality(5).blur(250);
   }
 
   return {
