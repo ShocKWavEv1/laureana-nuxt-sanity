@@ -1,8 +1,25 @@
+<script setup lang="ts">
+useHead({
+  title: "Laureana App",
+  meta: [{ name: "description", content: "My amazing site." }],
+  bodyAttrs: {
+    class: "test",
+  },
+});
+
+import { type Post } from "~/types/post";
+import { urlFor } from "~/utils/sanityImage";
+
+const query = groq`*[ _type == "post" && defined(slug.current) ] | order(_createdAt desc)`;
+const { data: posts } = await useSanityQuery<Post[]>(query);
+</script>
+
 <template>
   <div
     class="bg-zinc-950 text-white p-[20px] sm:p-[30px] md:p-[30px] xl:p-[40px]"
   >
-    <h1 class="text-6xl">Welcome to Nuxt + Sanity CMS</h1>
+    <h1 class="text-[76px] font-light">○○ Laureana Toledo</h1>
+    <h1 class="text-3xl font-light">Welcome to Nuxt + Sanity CMS</h1>
     <div
       class="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 pt-[40px] pb-[20px] gap-[20px]"
     >
@@ -27,27 +44,13 @@
           </div>
 
           <div class="w-full flex flex-col">
-            <h1 class="text-zinc-950 text-2xl">{{ post.title }}</h1>
-            <p class="text-zinc-950 text-lg">{{ post.slug.current }}</p>
+            <h1 class="text-zinc-950 text-3xl font-normal">{{ post.title }}</h1>
+            <p class="text-zinc-950 text-lg font-normal">
+              {{ post.slug.current }}
+            </p>
           </div>
         </NuxtLink>
       </div>
     </div>
   </div>
 </template>
-
-<script setup lang="ts">
-useHead({
-  title: "Laureana App",
-  meta: [{ name: "description", content: "My amazing site." }],
-  bodyAttrs: {
-    class: "test",
-  },
-});
-
-import { type Post } from "~/types/post";
-import { urlFor } from "~/utils/sanityImage";
-
-const query = groq`*[ _type == "post" && defined(slug.current) ] | order(_createdAt desc)`;
-const { data: posts } = await useSanityQuery<Post[]>(query);
-</script>
