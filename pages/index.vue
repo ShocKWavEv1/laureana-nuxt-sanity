@@ -1,5 +1,7 @@
 <template>
-  <div class="bg-zinc-950 text-white p-[40px]">
+  <div
+    class="bg-zinc-950 text-white p-[20px] sm:p-[30px] md:p-[30px] xl:p-[40px]"
+  >
     <h1 class="text-6xl">Welcome to Nuxt + Sanity CMS</h1>
     <div
       class="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 pt-[40px] pb-[20px] gap-[20px]"
