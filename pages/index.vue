@@ -16,17 +16,17 @@ const { data: posts } = await useSanityQuery<Post[]>(query);
 
 <template>
   <div
-    class="bg-zinc-950 text-white p-[20px] sm:p-[30px] md:p-[30px] xl:p-[40px]"
+    class="bg-[#F9F5FF] text-[#212529] p-[20px] sm:p-[30px] md:p-[30px] xl:p-[40px]"
   >
-    <h1 class="text-[76px] font-light">○○ Laureana Toledo</h1>
-    <h1 class="text-3xl font-light">Welcome to Nuxt + Sanity CMS</h1>
+    <h1 class="text-[76px] font-normal">○○ Laureana Toledo</h1>
+    <h1 class="text-3xl font-normal">Welcome to Nuxt + Sanity CMS</h1>
     <div
       class="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 pt-[40px] pb-[20px] gap-[20px]"
     >
       <div
         v-for="post in posts"
         :key="post._id"
-        class="w-full rounded-md shadow-2xl bg-white overflow-hidden"
+        class="w-full rounded-md shadow-xl bg-white overflow-hidden"
       >
         <NuxtLink
           prefetch
