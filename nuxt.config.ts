@@ -32,6 +32,7 @@ export default defineNuxtConfig({
       projectId: process.env.NUXT_PUBLIC_SANITY_PROJECT_ID,
       dataset: process.env.NUXT_PUBLIC_SANITY_DATASET,
     },
+    domains: ["cdn.sanity.io"],
   },
   css: ["~/assets/css/main.css"],
   postcss: {
