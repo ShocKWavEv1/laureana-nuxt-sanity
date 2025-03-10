@@ -16,7 +16,7 @@ const { data: posts } = await useSanityQuery<Post[]>(query);
 
 <template>
   <div
-    class="bg-[#F9F5FF] text-[#212529] p-[20px] sm:p-[30px] md:p-[30px] xl:p-[40px]"
+    class="bg-[#F8F9FA] text-[#212529] p-[20px] sm:p-[30px] md:p-[30px] xl:p-[40px]"
   >
     <h1 class="text-[76px] font-normal">○○ Laureana Toledo</h1>
     <h1 class="text-3xl font-normal">Welcome to Nuxt + Sanity CMS</h1>
