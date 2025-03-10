@@ -25,7 +25,7 @@ export default defineNuxtConfig({
     projectId: process.env.NUXT_SANITY_PROJECT_ID,
     dataset: process.env.NUXT_SANITY_DATASET,
     apiVersion: "2022-03-25",
-    useCdn: true, // Set to false for fresh data
+    useCdn: false, // Set to false for fresh data
   },
   image: {
     sanity: {
