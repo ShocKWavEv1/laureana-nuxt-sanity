@@ -36,7 +36,6 @@ const { data: posts } = await useSanityQuery<Post[]>(query);
           <div class="relative w-full h-[260px]">
             <NuxtImg
               v-if="post.mainImage"
-              provider="sanity"
               :src="urlFor(post.mainImage).url()"
               :alt="post.title"
               :placeholder="urlForPlaceholder(post.mainImage).url()"
